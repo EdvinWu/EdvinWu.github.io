@@ -19,14 +19,36 @@
         h1 {
             color: #d63384;
         }
-        .video-container {
+        .media-container {
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        audio {
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-<div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+<h1>Yay! You said yes! ❤️</h1>
+<div class="media-container">
+    <img src="content/yes.gif" alt="Happy GIF">
+    <audio controls>
+        <source src="content/song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 </div>
+<script>
+    window.addEventListener('load', () => {
+        const audio = document.querySelector("audio");
+        audio.play().catch(error => console.log("Autoplay blocked:", error));
+    });
+</script>
 </body>
 </html>
