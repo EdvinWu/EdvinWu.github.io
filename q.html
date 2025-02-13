@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Choice</title>
+    <style>
+        body {
+            background-color: #ffccd5;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff85a2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #e75480;
+        }
+        #sad-image {
+            visibility: hidden;
+            width: 300px;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 3s ease;
+        }
+    </style>
+</head>
+<body>
+<h1>Will you be my Valentine?</h1>
+<div class="button-container">
+    <button onclick="window.location.href='yes.html'">Yes</button>
+    <button onclick="showSadImage()">No</button>
+</div>
+<img id="sad-image" src="content/no.jpg" alt="Sad Image">
+<script>
+    function showSadImage() {
+        const img = document.getElementById('sad-image');
+        img.style.visibility = 'visible';
+        img.style.opacity = '1';
+        setTimeout(() => {
+            img.style.opacity = '0';
+        }, 3000);
+    }
+</script>
+</body>
+</html>
